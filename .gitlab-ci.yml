@@ -1,0 +1,7 @@
+deploy:jdk8:
+ stage: deploy
+ script:
+   - 'mvn $MAVEN_CLI_OPTS install'
+ only:
+   variables:
+     - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
